@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Рандомайзер фильмов</title>
+  <link rel="stylesheet" href="css.css" />
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="gif-strip"></div>
+
+  <section class="hero-section">
+
+  <!-- Левая табличка -->
+  <a href="page1.html" class="hero-link left">
+    <div class="sign" style="--tilt: -20deg;">
+      <img src="https://i0.wp.com/silvitablanco.com.ar/wp-content/uploads/2020/10/4_982572.png?resize=810%2C967&ssl=1" alt="Табличка" />
+      <span class="label">ПОЛНЫЙ СПИСОК</span>
+    </div>
+  </a>
+
+  <!-- Кнопка с гифкой -->
+  <div class="gif-wrapper">
+    <img src="images/блестяшки.gif" alt="Гирлянда" class="background-gif" />
+    <button class="centered-button">Что мне посмотреть?</button>
+  </div>
+
+  <!-- Правая табличка -->
+<button class="hero-button right" id="filterToggle" style="--tilt: 5deg;">
+  <div class="sign">
+    <img src="https://i0.wp.com/silvitablanco.com.ar/wp-content/uploads/2020/10/4_982572.png?resize=810%2C967&ssl=1" alt="Табличка" />
+    <span class="label">ФИЛЬТР</span>
+  </div>
+</button>
+
+<div class="filter-panel" id="filterPanel">
+  <h3>Фильтр</h3>
+
+  <div class="filter-group">
+    <strong>Вид:</strong>
+    <label><input type="radio" name="type" value="film" data-toggleable> фильм;</label>
+    <label><input type="radio" name="type" value="cartoon" data-toggleable> мультфильм.</label>
+  </div>
+
+  <div class="filter-group">
+    <strong>Я хочу:</strong>
+    <label><input type="radio" name="mood" value="cozy" data-toggleable> уюта;</label>
+    <label><input type="radio" name="mood" value="glass" data-toggleable> стекла;</label>
+    <label><input type="radio" name="mood" value="laugh" data-toggleable> посмеяться;</label>
+    <label><input type="radio" name="mood" value="sleep" data-toggleable> крепко уснуть.</label>
+  </div>
+
+  <div class="filter-group">
+    <strong>Знакомы?</strong>
+    <label><input type="radio" name="familiarity" value="married" data-toggleable> женаты;</label>
+    <label><input type="radio" name="familiarity" value="met" data-toggleable> встречались пару раз;</label>
+    <label><input type="radio" name="familiarity" value="familiar" data-toggleable> твоё лицо кажется знакомым;</label>
+    <label><input type="radio" name="familiarity" value="stranger" data-toggleable> ты кто вообще такой?!</label>
+  </div>
+
+  <div class="filter-group">
+    <strong>Продолжительность:</strong>
+    <label><input type="radio" name="duration" value="short" data-toggleable> &lt; 1:30:00;</label>
+    <label><input type="radio" name="duration" value="medium" data-toggleable> 1:30:00 – 2:00:00;</label>
+    <label><input type="radio" name="duration" value="long" data-toggleable> &gt; 2:00:00.</label>
+  </div>
+
+  <button class="apply-button">Применить</button>
+</div>
+
+</section>
+
+<!-- Кнопка-звезда -->
+<button id="toggleFormBtn" class="star-button" aria-label="Добавить фильм">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" alt="звезда" />
+</button>
+
+<!-- Обёртка формы -->
+<div id="formOverlay" class="form-overlay">
+  <section class="movie-form">
+    <h3>Добавить фильм</h3>
+    <form id="addMovieForm">
+      <!-- поля формы как у тебя -->
+      <input type="text" placeholder="Название" name="title" required />
+      <input type="text" placeholder="Ссылка на постер" name="poster" required />
+      <input type="text" placeholder="Ссылка на фильм" name="link" required />
+      <input type="text" placeholder="Код (например, 2360)" name="code" required />
+      <input type="text" placeholder="Продолжительность (например, 1:45:00)" name="length" required />
+
+      <label>Тип:
+        <select name="type">
+          <option value="film">Фильм</option>
+          <option value="cartoon">Мультфильм</option>
+        </select>
+      </label>
+
+      <label>Настроение:</label>
+      <select name="mood">
+        <option value="cozy">Уют</option>
+        <option value="glass">Стекло</option>
+        <option value="laugh">Смешное</option>
+        <option value="sleep">Сонное</option>
+      </select>
+
+      <label>Знакомство:</label>
+      <select name="familiarity">
+        <option value="married">Женаты</option>
+        <option value="met">Встречались пару раз</option>
+        <option value="familiar">Твоё лицо кажется знакомым</option>
+        <option value="stranger">Ты кто вообще такой?!</option>
+      </select>
+
+      <label>Продолжительность:</label>
+      <select name="duration">
+        <option value="short">&lt; 1:30:00</option>
+        <option value="medium">1:30:00 – 2:00:00</option>
+        <option value="long">&gt; 2:00:00</option>
+      </select>
+<button type="submit">Добавить фильм</button>
+
+<!-- Кнопка скачивания -->
+<button type="button" id="downloadLibraryBtn" class="download-button">📥 Скачать библиотеку</button>
+  </section>
+</div>
+
+
+
+  <script src="js.js"></script>
+</body>
+</html>
